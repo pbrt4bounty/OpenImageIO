@@ -103,11 +103,3 @@ jobs:
           #  ctest_test_timeout: "240"
           #  setenvs: export OPENIMAGEIO_PYTHON_LOAD_DLLS_FROM_PATH=1
           #  benchmark: 1
-
-          - desc: Save Windows executable
-            #if: ${{ matrix.os == 'windows-latest' }}
-            uses: actions/upload-artifact@v4
-            with:
-              name: OpenImageIO_msvc2022_py312
-              path: "${{ github.workspace }}/dist/"
-              retention-days: 1
