@@ -375,3 +375,10 @@ jobs:
             !build/testsuite/j2kp4files_v1_5
             !build/testsuite/common
             ${{ inputs.extra_artifacts }}
+      - name: Save Windows executable
+        #if: ${{ matrix.os == 'windows-latest' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenImageIO_msvc2022_py312
+          path: "${{ github.workspace }}/dist/"
+          retention-days: 1   
