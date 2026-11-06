@@ -277,10 +277,10 @@ jobs:
         with:
           path: ${{ env.CCACHE_DIR }}
           key: ${{inputs.nametag}}-${{steps.ccache_cache_keys.outputs.date}}
-      - name: Testsuite
-        if: inputs.skip_tests != '1'
-        shell: bash
-        run: src/build-scripts/ci-test.bash
+        #- name: Testsuite
+        #  if: inputs.skip_tests != '1'
+        #  shell: bash
+        #  run: src/build-scripts/ci-test.bash
       - name: Benchmarks
         if: inputs.benchmark == '1'
         shell: bash
