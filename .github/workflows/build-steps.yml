@@ -392,3 +392,9 @@ jobs:
             !build/testsuite/j2kp4files_v1_5
             !build/testsuite/common
             ${{ inputs.extra_artifacts }}
+      - name: Uploads Windows binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: oiio_msvc2022
+          path: "${{ github.workspace }}/build/Release/"
+          retention-days: 1
